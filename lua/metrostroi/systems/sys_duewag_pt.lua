@@ -48,11 +48,11 @@ function TRAIN_SYSTEM:Initialize()
 	
 	
 	self.ReverserInserted = false
-	self.ReverserState = 0 --internal registry for forwards, neutral, backwards
-	self.ReverserLeverState = 0 --for the reverser lever setting. -1 is reverse, 0 is neutral, 1 is startup, 2 is single unit, 3 is multiple unit
+	self.ReverserState = 0 			--internal registry for forwards, neutral, backwards
+	self.ReverserLeverState = 0 	--for the reverser lever setting. -1 is reverse, 0 is neutral, 1 is startup, 2 is single unit, 3 is multiple unit
 	
-	self.VZ = false -- multiple unit mode
-	self.VE = false --single unit mode
+	self.VZ = false 				-- multiple unit mode
+	self.VE = false 				--single unit mode
 	
 	self.BlinkerOnL = 0
 	self.BlinkerOnR = 0
@@ -63,13 +63,13 @@ function TRAIN_SYSTEM:Initialize()
 	self.BrakePressure = 0
 	self.TractionCutOut = false
 	
-	self.ThrottleStateAnimA = 0 --whether to stop listening to the throttle input
+	self.ThrottleStateAnimA = 0 	--whether to stop listening to the throttle input
 	self.ThrottleStateAnimB = 0
 	self.ThrottleCutOut = 0
 	
-	self.DynamicBraking = false --First stage of braking
-	self.TrackBrake = false --Electromagnetic brake
-	self.DiscBrake = false --physical friction brake
+	self.DynamicBraking = false 	--First stage of braking
+	self.TrackBrake = false 		--Electromagnetic brake
+	self.DiscBrake = false 			--physical friction brake
 	
 	self.EmergencyBrake = false
 	
@@ -149,9 +149,6 @@ function TRAIN_SYSTEM:Think(Train)
 	end
 
 	
-	
-	
-	
 	self.ReverserInserted = self.Train:GetNW2Bool("ReverserInserted") --get from the train whether the reverser is present
 	
 	self.ReverserLeverState = math.Clamp(self.ReverserLeverState, -1, 3)
@@ -191,8 +188,5 @@ function TRAIN_SYSTEM:Think(Train)
 	elseif self.BatteryStartUnlock == true or self.Train:ReadTrainWire(7) == 1 then --Except if the leading cab turns the batteries on for the entire train
 		self.BatteryOn = true
 		self.Train:SetNW2Bool("BatteryOn",true)
-	end
-
-	
-		
+	end	
 end
