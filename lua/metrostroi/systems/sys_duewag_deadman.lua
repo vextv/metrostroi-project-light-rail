@@ -125,6 +125,7 @@ function TRAIN_SYSTEM:Think()
 				self.AlarmSound = true
 			end
 		end
+	
 		
 		-- Handle emergency stop when deadman is tripped
 		if train:GetNW2Bool("DeadmanTripped") == true and (train.Duewag_U2.ReverserLeverStateA == 0 or train.Duewag_U2.ReverserLeverStateA == 0) and train.Duewag_U2.ThrottleState == 0 then
@@ -151,7 +152,7 @@ function TRAIN_SYSTEM:Think()
 		end
 		-- Check if deadman is tripped and reset conditions
 	
-	
+	end
 	train:SetNW2Bool("DeadmanAlarmSound", self.AlarmSound)
 
 	if train:GetNW2Bool("DeadmanTripped") == true and train.ReverserLeverState == 0 and self.ThrottleState == 0 and speed < 5 then
