@@ -70,12 +70,8 @@ function TRAIN_SYSTEM:Initialize()
     self.Button6a = 0
     self.Button7a = 0
     self.Button8a = 0
-
-
     self.Wiper = 0
-
     self.ReduceBrake = 0
-
     self.Blinker = 0
     self.Highbeam = 0
     self.BlinkerLeft = 0
@@ -116,13 +112,10 @@ function TRAIN_SYSTEM:Initialize()
     self.ThrowCoupler = 0
     self.DoorsUnlock = 0
     self.DoorCloseSignal = 0
-    
     self.Parralel = 0
     self.Headlights = 0
-    
     self.DoorsLeft = 0
     self.DoorsRight = 0
-
 end
 
 function TRAIN_SYSTEM:Outputs()
